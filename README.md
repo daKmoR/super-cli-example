@@ -59,12 +59,13 @@ Let's create a new cli and call it "Dust".
 function dust() {
 	ycliName="dust";
 	ycliLongName="Dust CLI";
+	ycliDir="$DUST_DIR";
 	ycliSubCli=1;
 
 	ycliPluginsPaths=(${ycliFoundPluginsPaths[@]});
+	ycliPluginsPaths+=("$DUST_DIR");
 	# we want to also have all ycli script available inside dust
 	ycliPluginsPaths+=("$YCLI_DIR"); # comment this line out if you only want YOUR commands visible
-	ycliPluginsPaths+=("$DUST_DIR");
 
 	# define the path to a second cli version
 	if [[ ! " ${ycliCliPaths[@]} " =~ " $DUST_DIR/dust.sh " ]]; then
